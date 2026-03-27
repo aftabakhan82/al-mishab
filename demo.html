@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Misbah Perfume | Luxury Perfumes</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1c1917; /* stone-900 */
+        }
+        
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hide scrollbar for cleaner look but allow scrolling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e; 
+        }
+    </style>
+</head>
+<body class="selection:bg-stone-200 min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Mobile menu button -->
+                <div class="flex items-center sm:hidden">
+                    <button id="mobile-menu-btn" class="text-stone-800 hover:text-stone-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <button data-navigate="home" class="nav-link text-sm tracking-widest uppercase transition-colors duration-200 text-stone-900 font-medium hover:text-stone-900">Home</button>
+                    <button data-navigate="shop" class="nav-link text-sm tracking-widest uppercase transition-colors duration-200 text-stone-500 hover:text-stone-900">Shop</button>
+                    <button data-navigate="story" class="nav-link text-sm tracking-widest uppercase transition-colors duration-200 text-stone-500 hover:text-stone-900">Our Story</button>
+                </div>
+
+                <!-- Logo -->
+<div class="group flex-shrink-0 flex items-center justify-center cursor-pointer relative py-2" data-navigate="home">
+    <h1 class="font-serif text-3xl tracking-[0.25em] text-stone-800 flex flex-col items-center">
+        AL-MISBAH
+        <span class="block text-[10px] tracking-[0.6em] text-stone-500 mt-1.5">
+            PERFUME
+        </span>
+    </h1>
+    <span class="absolute bottom-0 left-1/2 w-0 h-[1px] bg-stone-800 transition-all duration-500 ease-out group-hover:w-3/4 group-hover:left-[12.5%]"></span>
+</div>
+                <!-- Cart Icon -->
+                <div class="flex items-center justify-end sm:w-[150px]">
+                    <button data-navigate="cart" class="text-stone-800 hover:text-stone-600 relative group flex items-center">
+                        <i data-lucide="shopping-bag" class="w-6 h-6" stroke-width="1.5"></i>
+                        <span id="cart-badge" class="hidden absolute -top-1 -right-2 bg-stone-900 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">0</span>
+                        <span class="hidden sm:inline-block ml-2 text-sm tracking-widest uppercase text-stone-500 group-hover:text-stone-900 transition-colors">Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-stone-200 absolute w-full left-0 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button data-navigate="home" class="block w-full text-left px-3 py-4 text-base font-medium text-stone-800 tracking-widest uppercase border-b border-stone-100">Home</button>
+                <button data-navigate="shop" class="block w-full text-left px-3 py-4 text-base font-medium text-stone-800 tracking-widest uppercase border-b border-stone-100">Shop</button>
+                <button data-navigate="story" class="block w-full text-left px-3 py-4 text-base font-medium text-stone-800 tracking-widest uppercase border-b border-stone-100">Our Story</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app-root" class="flex-grow">
+        <!-- Views will be injected here via JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 py-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h2 class="font-serif text-2xl tracking-[0.2em] text-white mb-6">Al-Misbah Perfume</h2>
+                <p class="text-sm leading-relaxed max-w-xs text-stone-400">
+                    Crafting olfactory masterpieces since 1994. Every bottle is a testament to the art of fine perfumery, blending the rarest ingredients from around the world.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-sm tracking-widest uppercase text-white mb-6">Explore</h3>
+                <ul class="space-y-4 text-sm">
+                    <li><button data-navigate="shop" class="hover:text-white transition-colors">Shop All</button></li>
+                    <li><button data-navigate="story" class="hover:text-white transition-colors">Our Heritage</button></li>
+                    <li><button class="hover:text-white transition-colors">Bespoke Services</button></li>
+                    <li><button class="hover:text-white transition-colors">Journal</button></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm tracking-widest uppercase text-white mb-6">Newsletter</h3>
+                <p class="text-sm text-stone-400 mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Enter your email" class="bg-stone-800 border border-stone-700 px-4 py-2 w-full text-sm focus:outline-none focus:border-stone-500 text-white">
+                    <button class="bg-white text-stone-900 px-6 py-2 text-sm font-medium tracking-widest uppercase hover:bg-stone-200 transition-colors">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-stone-800 text-xs text-stone-500 flex flex-col sm:flex-row justify-between items-center">
+            <p>&copy; 2026 Al-Misbah Perfume Perfumes. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <button class="hover:text-white transition-colors">Privacy Policy</button>
+                <button class="hover:text-white transition-colors">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+  <!-- JavaScript Application Logic -->
+    <script>
+        // --- DATA ---
+        const PRODUCTS = [
+    {
+        id: 'p1',
+        name: "Noor Al-Hayat",
+        tagline: "The light of eternal elegance.",
+        description: "A radiant fragrance inspired by timeless beauty. Fresh citrus notes blend into a heart of delicate florals, finishing with a soft warm base.",
+        price: 245,
+        size: "100ml / 3.4 oz",
+        notes: ["Bergamot", "White Jasmine", "Rose", "Sandalwood"],
+        family: "Floral",
+        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800",
+        featured: true,
+    },
+    {
+        id: 'p2',
+        name: "Oud Al-Aswad",
+        tagline: "Dark, powerful, and mysterious.",
+        description: "A bold composition of rich oud blended with smoky spices and leather. Perfect for nights of confidence and depth.",
+        price: 320,
+        size: "100ml / 3.4 oz",
+        notes: ["Black Pepper", "Oud", "Leather", "Amber"],
+        family: "Woody Oriental",
+        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=800",
+        featured: true,
+    },
+    {
+        id: 'p3',
+        name: "Bahr Al-Naseem",
+        tagline: "A refreshing ocean breeze.",
+        description: "Inspired by coastal winds and fresh mornings. A clean aquatic scent with citrus brightness and soft woody undertones.",
+        price: 185,
+        size: "50ml / 1.7 oz",
+        notes: ["Sea Salt", "Neroli", "Grapefruit", "Driftwood"],
+        family: "Fresh Aquatic",
+        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=800",
+        featured: false,
+    },
+    {
+        id: 'p4',
+        name: "Layl Al-Hareer",
+        tagline: "Silky nights of luxury.",
+        description: "A rich gourmand fragrance with warm vanilla, toasted almond, and hints of cocoa, creating a sensual night aura.",
+        price: 275,
+        size: "100ml / 3.4 oz",
+        notes: ["Almond", "Vanilla", "Cocoa", "Tonka Bean"],
+        family: "Gourmand",
+        image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=800",
+        featured: true,
+    },
+    {
+        id: 'p5',
+        name: "Sandal Al-Dhahabi",
+        tagline: "Golden warmth of sandalwood.",
+        description: "A luxurious blend of creamy sandalwood, soft iris, and subtle spice, giving a warm and refined aura.",
+        price: 210,
+        size: "50ml / 1.7 oz",
+        notes: ["Cardamom", "Iris", "Sandalwood", "Cedar"],
+        family: "Woody",
+        image: "https://plus.unsplash.com/premium_photo-1739831741094-dbe81337661a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        featured: false,
+    },
+    {
+        id: 'p6',
+        name: "Ward Al-Hub",
+        tagline: "The rose of love.",
+        description: "A romantic floral fragrance combining rose, peony, and musk with a hint of spice for modern elegance.",
+        price: 195,
+        size: "50ml / 1.7 oz",
+        notes: ["Pink Pepper", "Peony", "Rose", "White Musk"],
+        family: "Floral Musk",
+        image: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?auto=format&fit=crop&q=80&w=800",
+        featured: false,
+    }
+];
+
+        // --- STATE MANAGEMENT ---
+        let state = {
+            view: 'home', // 'home', 'shop', 'product', 'cart', 'story'
+            productId: null,
+            cart: [],
+            pdpQuantity: 1
+        };
+
+        // Initialize from local storage if exists
+        try {
+            const savedCart = localStorage.getItem('Al-Misbah PerfumeCart');
+            if (savedCart) state.cart = JSON.parse(savedCart);
+        } catch(e) { console.error("Could not load cart"); }
+
+        // Save cart to local storage
+        function saveCart() {
+            localStorage.setItem('Al-Misbah PerfumeCart', JSON.stringify(state.cart));
+            updateCartBadge();
+        }
+
+        // --- TEMPLATES (HTML Strings) ---
+        
+        const views = {
+          home: () => `
+<div class="fade-in">
+
+    <!-- Hero Section -->
+    <div class="relative h-[85vh] bg-stone-100 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/bg.png" alt="Luxury perfume background" class="w-full h-full object-cover opacity-60 mix-blend-multiply"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-200/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-3xl mx-auto mt-20">
+            <p class="text-sm tracking-[0.3em] uppercase text-stone-800 mb-4 font-medium">Al-Misbah Perfume</p>
+            <h2 class="font-serif text-5xl md:text-7xl text-stone-900 mb-6 leading-tight">
+                Scent of <br/><span class="italic font-light">Elegance</span>
+            </h2>
+            <p class="text-stone-700 text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed">
+                Discover our curated collection of artisanal fragrances inspired by Arabic heritage and modern luxury.
+            </p>
+            <button data-navigate="shop" class="bg-stone-900 text-white px-10 py-4 text-sm tracking-[0.2em] uppercase hover:bg-stone-800 transition-all duration-300 transform hover:-translate-y-1">
+                Explore Collection
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="font-serif text-3xl text-stone-900 mb-6">Our Essence</h2>
+            <p class="text-stone-600 leading-relaxed mb-4">
+                At Al-Misbah Perfume, we blend tradition with innovation. Each fragrance is crafted using the finest oud, amber, and floral extracts sourced from across the world.
+            </p>
+            <p class="text-stone-600 leading-relaxed">
+                Our mission is to create timeless scents that reflect personality, confidence, and luxury.
+            </p>
+        </div>
+        <div class="aspect-[4/5] bg-stone-100 overflow-hidden">
+            <img src="/about.png" class="w-full h-full object-cover"/>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="flex justify-between items-end mb-12 border-b border-stone-200 pb-6">
+            <div>
+                <h2 class="font-serif text-3xl text-stone-900">Signature Scents</h2>
+                <p class="text-stone-500 mt-2 font-light">Our most loved fragrances</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            ${PRODUCTS.filter(p => p.featured).map(product => `
+                <div class="group cursor-pointer" data-navigate="product" data-id="${product.id}">
+                    <div class="relative aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
+                        <img src="${product.image}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"/>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs tracking-[0.2em] text-stone-500 uppercase mb-2">${product.family}</p>
+                        <h3 class="font-serif text-xl text-stone-900 mb-2">${product.name}</h3>
+                        <p class="text-stone-900 font-medium">Rs ${product.price}</p>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    </div>
+
+    <!-- Luxury Collection Banner -->
+    <div class="relative bg-stone-200 py-24 text-center">
+        <h2 class="font-serif text-4xl text-stone-900 mb-4">Exclusive Oud Collection</h2>
+        <p class="text-stone-600 mb-8">Experience the richness of traditional Arabian oud blends</p>
+        <button data-navigate="shop" class="border border-stone-900 px-8 py-3 uppercase text-sm hover:bg-stone-900 hover:text-white transition">
+            Discover Now
+        </button>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="max-w-5xl mx-auto px-4 py-24 text-center">
+        <h2 class="font-serif text-3xl text-stone-900 mb-12">What Our Customers Say</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 border border-stone-200">
+                <p class="text-stone-600 italic">"Absolutely luxurious fragrance, lasts all day!"</p>
+                <p class="mt-4 text-sm uppercase tracking-widest text-stone-900">Aftab Khan</p>
+            </div>
+            <div class="p-6 border border-stone-200">
+                <p class="text-stone-600 italic">"Best oud collection I have ever experienced."</p>
+                <p class="mt-4 text-sm uppercase tracking-widest text-stone-900">Imran Sheikh</p>
+            </div>
+            <div class="p-6 border border-stone-200">
+                <p class="text-stone-600 italic">"Elegant packaging and premium quality!"</p>
+                <p class="mt-4 text-sm uppercase tracking-widest text-stone-900">Zara Ali</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="bg-stone-900 text-white py-20 text-center">
+        <h2 class="font-serif text-3xl mb-4">Stay Updated</h2>
+        <p class="text-stone-400 mb-6">Get exclusive offers & new fragrance launches</p>
+        <div class="flex justify-center">
+            <input type="email" placeholder="Enter your email" class="px-4 py-3 w-64 text-black outline-none"/>
+            <button class="bg-white text-black px-6">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Quote Banner -->
+    <div class="bg-stone-900 text-stone-100 py-24">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-3xl md:text-4xl mb-6">
+                "Perfume is the art that makes memory speak."
+            </h2>
+            <p class="text-stone-400 uppercase tracking-widest text-sm">Al-Misbah</p>
+        </div>
+    </div>
+
+</div>
+`,
+            shop: () => `
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in">
+                    <div class="text-center mb-16">
+                        <h1 class="font-serif text-4xl text-stone-900 mb-4">The Collection</h1>
+                        <p class="text-stone-500 max-w-2xl mx-auto font-light">Explore our complete range of meticulously crafted fragrances. Find the scent that speaks to your soul.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                        ${PRODUCTS.map(product => `
+                            <div class="group cursor-pointer" data-navigate="product" data-id="${product.id}">
+                                <div class="relative aspect-[4/5] bg-stone-100 mb-6 overflow-hidden">
+                                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"/>
+                                    <div class="absolute bottom-0 left-0 w-full p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                        <div class="bg-white/90 backdrop-blur text-center py-3 text-sm tracking-widest uppercase text-stone-900 shadow-sm">
+                                            View Details
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="font-serif text-xl text-stone-900 mb-1">${product.name}</h3>
+                                        <p class="text-xs tracking-[0.2em] text-stone-500 uppercase">${product.family}</p>
+                                    </div>
+                                    <p class="text-stone-900 font-medium">Rs ${product.price}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `,
+            product: () => {
+                const product = PRODUCTS.find(p => p.id === state.productId);
+                if (!product) return `<div class="p-20 text-center">Product not found.</div>`;
+                
+                return `
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 fade-in">
+                    <button data-navigate="shop" class="flex items-center text-sm text-stone-500 hover:text-stone-900 transition-colors mb-10 group">
+                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform"></i> Back to Collection
+                    </button>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                        <!-- Image Gallery -->
+                        <div class="aspect-[4/5] bg-stone-100 relative overflow-hidden">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-center"/>
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="flex flex-col justify-center">
+                            <div class="mb-2 flex items-center justify-between">
+                                <p class="text-xs tracking-[0.2em] text-stone-500 uppercase">${product.family}</p>
+                                <div class="flex text-amber-700">
+                                    ${[1,2,3,4,5].map(() => `<i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <h1 class="font-serif text-4xl sm:text-5xl text-stone-900 mb-4">${product.name}</h1>
+                            <p class="text-xl text-stone-600 mb-8 font-light italic">${product.tagline}</p>
+                            
+                            <p class="text-stone-900 font-medium">Rs ${product.price}</p>
+                            
+                            <div class="space-y-6 text-stone-700 font-light leading-relaxed mb-10">
+                                <p>${product.description}</p>
+                            </div>
+
+                            <div class="mb-10">
+                                <h3 class="text-sm tracking-widest uppercase text-stone-900 mb-4 border-b border-stone-200 pb-2">Olfactory Notes</h3>
+                                <ul class="grid grid-cols-2 gap-y-2">
+                                    ${product.notes.map(note => `
+                                        <li class="flex items-center text-stone-600 text-sm">
+                                            <span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> ${note}
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="mb-8">
+                                <p class="text-sm text-stone-500 mb-2">Size: <span class="text-stone-900 font-medium">${product.size}</span></p>
+                            </div>
+
+                            <div class="flex space-x-4 mb-8">
+                                <div class="flex border border-stone-300 items-center w-32">
+                                    <button id="pdp-qty-minus" class="px-4 py-3 text-stone-500 hover:text-stone-900 transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                                    <span id="pdp-qty-display" class="flex-1 text-center text-stone-900">${state.pdpQuantity}</span>
+                                    <button id="pdp-qty-plus" class="px-4 py-3 text-stone-500 hover:text-stone-900 transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                                </div>
+                                
+                                <button id="add-to-cart-btn" class="flex-1 py-3 px-6 text-sm tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center bg-stone-900 text-white hover:bg-stone-800">
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                            
+                            <div class="text-xs text-stone-500 space-y-2 pt-6 border-t border-stone-200">
+                                <p>Free standard shipping on orders over Rs 250.</p>
+                                <p>Complimentary samples with every order.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            },
+            cart: () => {
+                const subtotal = state.cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+                const shipping = subtotal > 150 ? 0 : 15;
+                const total = subtotal > 0 ? subtotal + shipping : 0;
+
+                if (state.cart.length === 0) {
+                    return `
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in min-h-[70vh]">
+                        <h1 class="font-serif text-3xl text-stone-900 mb-10 border-b border-stone-200 pb-6">Your Cart</h1>
+                        <div class="text-center py-20">
+                            <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto text-stone-300 mb-6 stroke-1"></i>
+                            <p class="text-stone-600 mb-8 font-light text-lg">Your shopping bag is currently empty.</p>
+                            <button data-navigate="shop" class="bg-stone-900 text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-stone-800 transition-colors">
+                                Continue Shopping
+                            </button>
+                        </div>
+                    </div>`;
+                }
+
+                return `
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in min-h-[70vh]">
+                    <h1 class="font-serif text-3xl text-stone-900 mb-10 border-b border-stone-200 pb-6">Your Cart</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <!-- Cart Items -->
+                        <div class="md:col-span-2 space-y-8">
+                            ${state.cart.map(item => `
+                                <div class="flex gap-6 pb-8 border-b border-stone-100">
+                                    <div class="w-24 h-32 bg-stone-100 flex-shrink-0 cursor-pointer" data-navigate="product" data-id="${item.product.id}">
+                                        <img src="${item.product.image}" alt="${item.product.name}" class="w-full h-full object-cover" />
+                                    </div>
+                                    <div class="flex-1 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex justify-between items-start mb-1">
+                                                <h3 class="font-serif text-lg text-stone-900 cursor-pointer hover:text-stone-600 transition-colors" data-navigate="product" data-id="${item.product.id}">
+                                                    ${item.product.name}
+                                                </h3>
+                                                <button data-action="remove-cart" data-id="${item.product.id}" class="text-stone-400 hover:text-stone-800 transition-colors">
+                                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                                </button>
+                                            </div>
+                                            <p class="text-xs tracking-widest text-stone-500 uppercase">${item.product.size}</p>
+                                        </div>
+                                        
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex border border-stone-200 items-center">
+                                                <button data-action="update-cart" data-id="${item.product.id}" data-change="-1" class="px-3 py-1 text-stone-500 hover:text-stone-900 transition-colors">
+                                                    <i data-lucide="minus" class="w-3.5 h-3.5"></i>
+                                                </button>
+                                                <span class="w-8 text-center text-sm text-stone-900">${item.quantity}</span>
+                                                <button data-action="update-cart" data-id="${item.product.id}" data-change="1" class="px-3 py-1 text-stone-500 hover:text-stone-900 transition-colors">
+                                                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                                                </button>
+                                            </div>
+                                            <p class="text-stone-900 font-medium">Rs ${item.product.price * item.quantity}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="bg-stone-50 p-6 md:p-8 h-fit">
+                            <h2 class="text-sm tracking-widest uppercase text-stone-900 mb-6 border-b border-stone-200 pb-4">Order Summary</h2>
+                            
+                            <div class="space-y-4 text-sm text-stone-600 mb-6 border-b border-stone-200 pb-6">
+                                <div class="flex justify-between">
+                                    <span>Subtotal</span>
+                                    <span>Rs ${subtotal}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Shipping</span>
+                                    <span>${shipping === 0 ? 'Complimentary' : `Rs ${shipping}`}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center text-lg text-stone-900 font-serif mb-8">
+                                <span>Total</span>
+                                <span>Rs ${total}</span>
+                            </div>
+                            
+                            <button class="w-full bg-stone-900 text-white py-4 text-sm tracking-[0.2em] uppercase hover:bg-stone-800 transition-colors mb-4 flex items-center justify-center">
+                                Checkout
+                            </button>
+                            
+                            <div class="flex items-center justify-center text-xs text-stone-500 mt-4">
+                                <span class="flex items-center"><i data-lucide="lock" class="w-3 h-3 mr-1 text-stone-400"></i> Secure Checkout</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            },
+           story: () => `
+    <div class="max-w-5xl mx-auto px-4 py-24 text-center fade-in min-h-[70vh]">
+        
+        <h1 class="font-serif text-5xl text-stone-900 mb-10 tracking-wide">Our Heritage</h1>
+        
+        <p class="text-stone-600 font-light leading-relaxed mb-6 text-lg">
+            Born from a passion for timeless elegance, <span class="font-medium text-stone-800">Al-Misbah Perfume</span> traces its origins to the legendary perfume capital of Grasse, France — where fragrance is not just crafted, but revered as an art form. Our journey began with a vision to capture emotion, memory, and identity within every drop.
+        </p>
+
+        <p class="text-stone-600 font-light leading-relaxed mb-6 text-lg">
+            Inspired by the richness of Arabian heritage and the refinement of French perfumery, we blend rare botanicals, precious oud, delicate florals, and exotic spices. Each ingredient is carefully sourced from around the world — from the rose fields of Bulgaria to the deep forests of Southeast Asia.
+        </p>
+
+        <p class="text-stone-600 font-light leading-relaxed mb-6 text-lg">
+            Our artisans follow time-honored techniques such as <span class="italic">enfleurage</span> and slow distillation, preserving the purity of every essence. Combined with modern olfactory innovation, this ensures each fragrance tells a unique story — one that evolves beautifully on your skin.
+        </p>
+
+        <p class="text-stone-600 font-light leading-relaxed mb-6 text-lg">
+            At Al-Misbah, we believe perfume is deeply personal. It is a signature, an invisible expression of who you are. Every bottle we create is designed not just to be worn, but to be remembered.
+        </p>
+
+        <p class="text-stone-500 font-light leading-relaxed text-base max-w-2xl mx-auto">
+            With a commitment to sustainability and ethical sourcing, we honor nature as much as we celebrate luxury. Our packaging is thoughtfully designed, our processes are responsible, and our mission is enduring — to illuminate lives through the power of scent.
+        </p>
+
+        <div class="mt-16">
+            <button data-navigate="shop" 
+                class="text-sm tracking-widest uppercase border-b border-stone-900 pb-1 hover:text-stone-500 hover:border-stone-500 transition-all duration-300">
+                Discover Our Creations
+            </button>
+        </div>
+
+    </div>
+`
+        };
+
+        // --- RENDER FUNCTION ---
+        const root = document.getElementById('app-root');
+
+        function render() {
+            // Update Active Nav Links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if(link.dataset.navigate === state.view) {
+                    link.classList.remove('text-stone-500');
+                    link.classList.add('text-stone-900', 'font-medium');
+                } else {
+                    link.classList.add('text-stone-500');
+                    link.classList.remove('text-stone-900', 'font-medium');
+                }
+            });
+
+            // Inject HTML based on current view
+            root.innerHTML = views[state.view]();
+            
+            // Re-initialize Lucide Icons for newly injected HTML
+            lucide.createIcons();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Attach specific listeners for Product Detail Page
+            if (state.view === 'product') {
+                const qtyMinus = document.getElementById('pdp-qty-minus');
+                const qtyPlus = document.getElementById('pdp-qty-plus');
+                const qtyDisplay = document.getElementById('pdp-qty-display');
+                const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+                if (qtyMinus) qtyMinus.addEventListener('click', () => {
+                    if (state.pdpQuantity > 1) {
+                        state.pdpQuantity--;
+                        qtyDisplay.innerText = state.pdpQuantity;
+                    }
+                });
+
+                if (qtyPlus) qtyPlus.addEventListener('click', () => {
+                    state.pdpQuantity++;
+                    qtyDisplay.innerText = state.pdpQuantity;
+                });
+
+                if (addToCartBtn) addToCartBtn.addEventListener('click', () => {
+                    const product = PRODUCTS.find(p => p.id === state.productId);
+                    const existingItem = state.cart.find(item => item.product.id === product.id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += state.pdpQuantity;
+                    } else {
+                        state.cart.push({ product, quantity: state.pdpQuantity });
+                    }
+                    
+                    saveCart();
+                    
+                    // Visual feedback
+                    addToCartBtn.innerHTML = `<i data-lucide="check" class="w-5 h-5 mr-2"></i> Added to Cart`;
+                    addToCartBtn.classList.replace('bg-stone-900', 'bg-green-700');
+                    addToCartBtn.classList.replace('hover:bg-stone-800', 'hover:bg-green-800');
+                    lucide.createIcons();
+                    
+                    setTimeout(() => {
+                        addToCartBtn.innerHTML = `<span>Add to Cart</span>`;
+                        addToCartBtn.classList.replace('bg-green-700', 'bg-stone-900');
+                        addToCartBtn.classList.replace('hover:bg-green-800', 'hover:bg-stone-800');
+                    }, 2000);
+                });
+            }
+        }
+
+        // --- CART BADGE UTILITY ---
+        function updateCartBadge() {
+            const count = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cart-badge');
+            if (count > 0) {
+                badge.innerText = count;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // --- EVENT DELEGATION (Global Click Handler) ---
+        document.addEventListener('click', (e) => {
+            // Navigation
+            const navTarget = e.target.closest('[data-navigate]');
+            if (navTarget) {
+                const targetView = navTarget.dataset.navigate;
+                state.view = targetView;
+                
+                if (targetView === 'product' && navTarget.dataset.id) {
+                    state.productId = navTarget.dataset.id;
+                    state.pdpQuantity = 1; // Reset quantity when visiting a new product
+                }
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                render();
+            }
+
+            // Cart Actions
+            const cartActionTarget = e.target.closest('[data-action]');
+            if (cartActionTarget) {
+                const action = cartActionTarget.dataset.action;
+                const id = cartActionTarget.dataset.id;
+
+                if (action === 'remove-cart') {
+                    state.cart = state.cart.filter(item => item.product.id !== id);
+                    saveCart();
+                    render(); // Re-render cart
+                }
+
+                if (action === 'update-cart') {
+                    const change = parseInt(cartActionTarget.dataset.change);
+                    const item = state.cart.find(i => i.product.id === id);
+                    if (item) {
+                        item.quantity += change;
+                        if (item.quantity <= 0) {
+                            state.cart = state.cart.filter(i => i.product.id !== id);
+                        }
+                        saveCart();
+                        render(); // Re-render cart
+                    }
+                }
+            }
+        });
+
+        // --- MOBILE MENU TOGGLE ---
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // --- INITIALIZATION ---
+        updateCartBadge();
+        render(); // First render on load
+
+    </script>
+    </body>
+    </html>
+    
+ 
